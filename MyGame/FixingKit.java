@@ -12,7 +12,7 @@ public class FixingKit extends Actor
      * Act - do whatever the FixingKit wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    static int addLife = 5;
+    static int addLife = 2;
     int frames = 0;
     //private boolean isRemoved = false;
     public void act() 

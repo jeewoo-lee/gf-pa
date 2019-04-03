@@ -13,12 +13,14 @@ public class MyTank extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int frames = 0;
-    private static int life = 10;
+    private static int life = 20;
     private static int reloadTime = 5;
     public void act() 
     {
         movement();
-        
+        String life1 = Integer.toString(life);
+        getWorld().showText("Life:",25,20);
+        getWorld().showText(life1, 70, 20);
     } 
     
     public void movement()
