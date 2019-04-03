@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=MyTank
+comment0.text=\n\ Write\ a\ description\ of\ class\ MyTank\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ movement()
+comment3.params=by
+comment3.target=void\ changeLifeLevel(int)
+comment4.params=by
+comment4.target=void\ changeReloadTime(int)
+comment5.params=
+comment5.target=int\ returnLife()
+comment6.params=
+comment6.target=int\ returnReloadTime()
+comment7.params=
+comment7.target=void\ fire()
+comment8.params=
+comment8.target=void\ checkIfDamaged()
+numComments=9

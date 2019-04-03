@@ -1,0 +1,72 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class MyTank here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class MyTank extends Actor
+{
+    /**
+     * Act - do whatever the MyTank wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    int frames = 0;
+    private static int life = 10;
+    private static int reloadTime = 5;
+    public void act() 
+    {
+        movement();
+        
+    } 
+    
+    public void movement()
+    {
+        if (Greenfoot.isKeyDown("left")) 
+        {
+            setRotation(getRotation() - 3);
+        }
+        
+        if (Greenfoot.isKeyDown("right")) 
+        {
+            setRotation(getRotation() + 3);
+        }
+        
+        if (Greenfoot.isKeyDown("up")) 
+        {
+            move(3);
+        }
+        
+        if (Greenfoot.isKeyDown("down")) 
+        {
+            move(-3);
+        }
+    }
+    
+     public void changeLifeLevel(int by)
+    {
+       this.life = this.life + by;
+       
+    } 
+    public void changeReloadTime(int by)
+    {
+        this.reloadTime = this.reloadTime - by;
+    }
+    public static int returnLife()
+    {
+       return life;
+    }
+    public static int returnReloadTime()
+    {
+       return reloadTime;
+    }
+    public void fire()
+    {
+    
+    }
+    public void checkIfDamaged()
+    {
+        
+    }
+}
