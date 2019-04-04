@@ -16,7 +16,7 @@ public class MyWorld extends World
     private static int frames = 0;
     private MyTank myTank;
     private EnemyTank enemy;
-    private int score = 0;
+    public int score = 0;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -81,8 +81,8 @@ public class MyWorld extends World
     {
         score ++;
         String a = Integer.toString(score);
-        showText(a,130,20);
-        showText("Score is",70, 20);
+        showText(a,180,20);
+        showText("Score is",130, 20);
       
     }
     int score()
