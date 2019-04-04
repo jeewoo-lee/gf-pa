@@ -13,8 +13,8 @@ public class EnemyBullet extends Actor
      * Act - do whatever the EnemyBullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private static int reduceLife = -5;
     
+    boolean isRemoved = false;
     /**
      * Constructor for EnemyBullet class
      */
@@ -26,7 +26,15 @@ public class EnemyBullet extends Actor
     public void act() 
     {
         // Add your action code here.
-        move(2);
+        move(5);
+        if (isRemoved == false)
+        {
+            checkIfTouchedBy();
+        }
+        if(isRemoved == false)
+        {
+            checkIfAtEdge();
+        }
     }  
     
     public void checkIfTouchedBy()
@@ -35,16 +43,27 @@ public class EnemyBullet extends Actor
         {
             // Gets an object reference to the world
             MyWorld world = (MyWorld) getWorld();
-            if (MyTank.returnLife() < 20)
-            {
-            world.getMyTank().changeLifeLevel(this.reduceLife);
-            }
-            //get removed
             
+            
+            
+            //get removed
+            this.isRemoved = true;
             getWorld().removeObject(this);
             
            
         }
+    }
+    public void checkIfAtEdge()
+    {
+        if (isAtEdge())
+        {
+            MyWorld world = (MyWorld) getWorld();
+           
+            //get removed
+            this.isRemoved = true;
+            getWorld().removeObject(this);
+        }
+    
     }
     
 }

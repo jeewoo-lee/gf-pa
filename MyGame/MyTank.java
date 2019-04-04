@@ -12,16 +12,17 @@ public class MyTank extends Actor
      * Act - do whatever the MyTank wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int frames = 60;
-    private static int life = 20;
+    int reload = 60;
+    private  int life = 20;
     // private static int reloadTime = 5;
     // private static int reloadWaitTime = 0;
     
     public void act() 
     {
         movement();
-        frames++;
+        reload++;
         fire();
+        checkIfDamaged();
         String life1 = Integer.toString(life);
         getWorld().showText("Life:",25,20);
         getWorld().showText(life1, 70, 20);
@@ -62,7 +63,7 @@ public class MyTank extends Actor
         // this.reloadTime = this.reloadTime - by;
     // }
 
-    public static int returnLife()
+    public int returnLife()
     {
         return life;
     }
@@ -76,23 +77,31 @@ public class MyTank extends Actor
     {
         if(Greenfoot.isKeyDown("space"))
         {
-            if (frames > 1) 
+            if (reload > 1) 
             {
                 Bullet newBullet = new Bullet(getRotation());
                 getWorld().addObject(newBullet, getX(), getY());
-                frames = 0;
+                reload = 0;
             }     
         }
     }
 
     private void checkIfDamaged()
     {
-
+        if (isTouching(EnemyBullet.class))
+        {
+            life --;
+        }
+        
         if (life == 0)
         {
             getWorld().showText("Game Over!",500,400);
             Greenfoot.stop();
         }
 
+    }
+    public void started()
+    {
+        life = 20;
     }
 }

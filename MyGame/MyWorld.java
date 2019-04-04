@@ -74,7 +74,7 @@ public class MyWorld extends World
             }
             if (selection == 2)
             {
-                addObject(new Upgrade(),Greenfoot.getRandomNumber(1200),Greenfoot.getRandomNumber(800));
+                addObject(new Mine(),Greenfoot.getRandomNumber(1200),Greenfoot.getRandomNumber(800));
             }
         }
     }

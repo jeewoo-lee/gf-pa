@@ -12,9 +12,10 @@ public class EnemyTank extends Actor
      * Act - do whatever the EnemyTank wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int reload = 0;
+    private int reload = 0;
     private int life = 5;
     private int reloadTime = 7;
+    private int frames = 0;
     boolean isRemoved;
     public EnemyTank()
     {
@@ -26,12 +27,11 @@ public class EnemyTank extends Actor
     {
         // Add your action code here.
         movement();
+        fire();
         checkIfDamaged();
         if (!isRemoved) 
         {
-            checkForRemoval();
-            //checkIfTimeToUpgrade();
-            
+            checkForRemoval();           
         }
         reload ++;
     } 
@@ -81,35 +81,16 @@ public class EnemyTank extends Actor
         return life;
     }
 
-    private void checkIfTimeToUpgrade()
-    {
-        MyWorld world = (MyWorld) getWorld();
-        if (world.score() > 9)
-        {
-            life = 7;
-            reloadTime = 6;
-
-        }
-        else if (world.score() > 19)
-        {
-            life = 9;
-            reloadTime = 5;
-
-        }
-        else if (world.score() > 29)
-        {
-            life = 10;
-            reloadTime = 4;
-        }
-    }
-
     private void checkIfDamaged()
     {
         if (isTouching(Bullet.class))
         {
-            life = 0;
+            life --;
         }
-
+        if (isTouching(Mine.class))
+        {
+            life = life - 2;
+        }
         
     }
 
@@ -124,5 +105,16 @@ public class EnemyTank extends Actor
 
         }
     }
-
+    private void fire()
+    {
+       // if (frames % 30 == 0) 
+        //{
+                if (reload == 30)
+                {
+                EnemyBullet newEnemyBullet = new EnemyBullet(getRotation());
+                getWorld().addObject(newEnemyBullet, getX(), getY());
+                reload = 0;
+                }
+        // }     
+    }
 }

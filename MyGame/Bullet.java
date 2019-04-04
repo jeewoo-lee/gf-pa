@@ -31,7 +31,10 @@ public class Bullet extends Actor
         if (isRemoved == false) 
         {
             checkIfTouchedBy();
-            
+        }
+        if (isRemoved == false)
+        {
+            checkIfAtEdge();
         }
     }  
 
@@ -44,12 +47,25 @@ public class Bullet extends Actor
             MyWorld world = (MyWorld) getWorld();
            
             //get removed
-
+            this.isRemoved = true;
             getWorld().removeObject(this);
 
         }
-        
+     
     }
+    public void checkIfAtEdge()
+    {
+        if (isAtEdge())
+        {
+            MyWorld world = (MyWorld) getWorld();
+           
+            //get removed
+            this.isRemoved = true;
+            getWorld().removeObject(this);
+        }
+    
+    }
+    
     
 
 }
