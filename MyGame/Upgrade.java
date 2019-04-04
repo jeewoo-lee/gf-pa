@@ -17,7 +17,7 @@ public class Upgrade extends Actor
     {
         checkIfTouchedBy();
     }   
-    public void checkIfTouchedBy()
+    private void checkIfTouchedBy()
     {
         if (isTouching(MyTank.class))
         {

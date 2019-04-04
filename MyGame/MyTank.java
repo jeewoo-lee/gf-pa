@@ -23,7 +23,7 @@ public class MyTank extends Actor
         getWorld().showText(life1, 70, 20);
     } 
     
-    public void movement()
+    private void movement()
     {
         if (Greenfoot.isKeyDown("left")) 
         {
@@ -46,7 +46,7 @@ public class MyTank extends Actor
         }
     }
     
-     public void changeLifeLevel(int by)
+    public void changeLifeLevel(int by)
     {
        this.life = this.life + by;
        
@@ -63,11 +63,11 @@ public class MyTank extends Actor
     {
        return reloadTime;
     }
-    public void fire()
+    private void fire()
     {
     
     }
-    public void checkIfDamaged()
+    private void checkIfDamaged()
     {
         
     }
