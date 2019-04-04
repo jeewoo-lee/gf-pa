@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=EnemyBullet
+comment0.text=\n\ Write\ a\ description\ of\ class\ EnemyBullet\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=rotation
+comment1.target=EnemyBullet(int)
+comment1.text=\n\ Constructor\ for\ EnemyBullet\ class\n
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ checkIfTouchedBy()
+numComments=4

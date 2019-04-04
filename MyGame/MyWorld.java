@@ -15,6 +15,7 @@ public class MyWorld extends World
      */
     private static int frames = 0;
     private MyTank myTank;
+    private EnemyTank enemy;
     private int score = 0;
     public MyWorld()
     {    
@@ -49,6 +50,10 @@ public class MyWorld extends World
     public MyTank getMyTank()
     {
         return myTank;
+    }
+    public EnemyTank getEnemyTank()
+    {
+        return enemy;
     }
     private void dropSupply()
     {

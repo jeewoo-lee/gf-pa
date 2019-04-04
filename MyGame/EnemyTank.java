@@ -19,6 +19,7 @@ public class EnemyTank extends Actor
     {
         // Add your action code here.
         movement();
+        checkIfDamaged();
         checkIfTimeToUpgrade();
         frames ++;
     } 
@@ -42,7 +43,7 @@ public class EnemyTank extends Actor
         {
             move(5);
         }
-        else (selection == 5)
+        else
         {
             move(5);
         }
@@ -54,8 +55,18 @@ public class EnemyTank extends Actor
             move(-5);
             setRotation(getRotation()+90);
         }
-    
+       
     }
+    public void changeLifeLevel(int by)
+    {
+       this.life = this.life + by;
+       
+    } 
+    public static int returnLife()
+    {
+       return life;
+    }
+    
     private void checkIfTimeToUpgrade()
     {
         MyWorld world = (MyWorld) getWorld();
@@ -89,4 +100,5 @@ public class EnemyTank extends Actor
         }
         
     }
+    
 }

@@ -19,6 +19,7 @@ public class MyTank extends Actor
     public void act() 
     {
         movement();
+        fire();
         String life1 = Integer.toString(life);
         getWorld().showText("Life:",25,20);
         getWorld().showText(life1, 70, 20);
@@ -66,10 +67,27 @@ public class MyTank extends Actor
     }
     private void fire()
     {
-
+        // if (reloadWaitTime > reloadTime)
+        // {
+           if(Greenfoot.isKeyDown("space"))
+           {
+            Bullet newBullet = new Bullet(45);
+           getWorld().addObject(newBullet, getX(), getY());
+           }
+           
+        // }
     }
+ 
     private void checkIfDamaged()
     {
-        
+        if (isTouching(EnemyBullet.class))
+        {
+            life --;
+        }
+        if (life ==0)
+        {
+            getWorld().showText("Game Over!",500,400);
+            Greenfoot.stop();
+        }
     }
 }

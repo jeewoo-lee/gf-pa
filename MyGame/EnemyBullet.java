@@ -1,24 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bullet here.
+ * Write a description of class EnemyBullet here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
 
-public class Bullet extends Actor
+public class EnemyBullet extends Actor
 {
     /**
-     * Act - do whatever the Bullet wants to do. This method is called whenever
+     * Act - do whatever the EnemyBullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private static int reduceLife = -5;
     
     /**
-     * Constructor for Bullet class
+     * Constructor for EnemyBullet class
      */
-    Bullet(int rotation)
+    EnemyBullet(int rotation)
     {
         setRotation(rotation);
     }
@@ -27,18 +27,17 @@ public class Bullet extends Actor
     {
         // Add your action code here.
         move(2);
-        checkIfTouchedBy();
     }  
     
     public void checkIfTouchedBy()
     {
-        if (isTouching(EnemyTank.class))
+        if (isTouching(MyTank.class))
         {
             // Gets an object reference to the world
             MyWorld world = (MyWorld) getWorld();
-            if (EnemyTank.returnLife() < 20)
+            if (MyTank.returnLife() < 20)
             {
-            world.getEnemyTank().changeLifeLevel(this.reduceLife);
+            world.getMyTank().changeLifeLevel(this.reduceLife);
             }
             //get removed
             
