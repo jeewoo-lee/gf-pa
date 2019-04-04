@@ -27,6 +27,7 @@ public class MyWorld extends World
     public void act()
     {
         time();
+        dropEnemyTank();
         dropSupply();
         frames = frames +1;
     }
@@ -62,6 +63,13 @@ public class MyWorld extends World
             {
                 addObject(new Upgrade(),Greenfoot.getRandomNumber(1200),Greenfoot.getRandomNumber(800));
             }
+        }
+    }
+    private void dropEnemyTank()
+    {
+        if (frames % 120 == 0)
+        {
+            addObject(new EnemyTank(), Greenfoot.getRandomNumber(1200), Greenfoot.getRandomNumber(800));
         }
     }
     void addScore()

@@ -30,21 +30,19 @@ public class EnemyTank extends Actor
         {
             setRotation(getRotation() - 3);
         }
-        
-        if (selection == 2) 
+        else if (selection == 2) 
         {
             setRotation(getRotation() + 3);
         }
-        
-        if (selection == 3) 
+        else if (selection == 3) 
         {
             move(10);
         }
-        if (selection == 4) 
+        else if (selection == 4) 
         {
             move(5);
         }
-        if (selection == 5) 
+        else (selection == 5)
         {
             move(5);
         }

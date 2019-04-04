@@ -15,6 +15,7 @@ public class MyTank extends Actor
     int frames = 0;
     private static int life = 20;
     private static int reloadTime = 5;
+    private static int reloadWaitTime = 0;
     public void act() 
     {
         movement();
@@ -65,7 +66,7 @@ public class MyTank extends Actor
     }
     private void fire()
     {
-    
+
     }
     private void checkIfDamaged()
     {
