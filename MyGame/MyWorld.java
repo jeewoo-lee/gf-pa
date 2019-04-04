@@ -13,7 +13,7 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    private static int frames = 0;
+    private int frames = 0;
     private MyTank myTank;
     private EnemyTank enemy;
     public int score = 0;
@@ -23,15 +23,18 @@ public class MyWorld extends World
         super(1200, 800, 1); 
         myTank = new MyTank();
         this.addObject(myTank,600,400);
-        
+
     }
+
     public void act()
     {
         time();
         dropEnemyTank();
         dropSupply();
         frames = frames +1;
+        showText("" + frames, 200, 200);
     }
+
     private void time()
     {
         // Every 60 frames, update the time
@@ -40,21 +43,26 @@ public class MyWorld extends World
             String timeElapsed = Integer.toString(frames / 60);
             showText("Time:",1100,20);
             showText(timeElapsed, 1150, 20);
-            
+
         }
     }
+
     public void started()
     {
         frames = 0;
+        score = 0;
     }
+
     public MyTank getMyTank()
     {
         return myTank;
     }
+
     public EnemyTank getEnemyTank()
     {
         return enemy;
     }
+
     private void dropSupply()
     {
         if (frames % 120 == 0)
@@ -70,25 +78,28 @@ public class MyWorld extends World
             }
         }
     }
+
     private void dropEnemyTank()
     {
+        
         if (frames % 120 == 0)
         {
             addObject(new EnemyTank(), Greenfoot.getRandomNumber(1200), Greenfoot.getRandomNumber(800));
         }
     }
+
     void addScore()
     {
         score ++;
         String a = Integer.toString(score);
         showText(a,180,20);
         showText("Score is",130, 20);
-      
+
     }
+
     int score()
     {
         return score;
     }
-    
-    
+
 }

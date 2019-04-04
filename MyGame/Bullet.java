@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+  import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Bullet here.
@@ -14,7 +14,7 @@ public class Bullet extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private static int reduceLife = -5;
-
+    boolean isRemoved = false;
     /**
      * Constructor for Bullet class
      */
@@ -26,12 +26,18 @@ public class Bullet extends Actor
     public void act() 
     {
         // Add your action code here.
-        move(2);
-        checkIfTouchedBy();
+        move(10);
+        
+        if (isRemoved == false) 
+        {
+            checkIfTouchedBy();
+            
+        }
     }  
 
     public void checkIfTouchedBy()
     {
+        
         if (isTouching(EnemyTank.class))
         {
             // Gets an object reference to the world
@@ -42,6 +48,8 @@ public class Bullet extends Actor
             getWorld().removeObject(this);
 
         }
+        
     }
+    
 
 }

@@ -15,25 +15,25 @@ public class Upgrade extends Actor
     private static int reduceReload = 3;
     public void act() 
     {
-        checkIfTouchedBy();
+        // checkIfTouchedBy();
     }   
-    private void checkIfTouchedBy()
-    {
-        if (isTouching(MyTank.class))
-        {
-            // Gets an object reference to the world
-            MyWorld world = (MyWorld) getWorld();
-            if (MyTank.returnReloadTime() > 0)
-            {
-            world.getMyTank().changeReloadTime(this.reduceReload);
-            }
-            //get removed
-            //this.isRemoved = true;
-            getWorld().removeObject(this);
+    // private void checkIfTouchedBy()
+    // {
+        // if (isTouching(MyTank.class))
+        // {
+            // // Gets an object reference to the world
+            // MyWorld world = (MyWorld) getWorld();
+            // if (MyTank.returnReloadTime() > 0)
+            // {
+            // world.getMyTank().changeReloadTime(this.reduceReload);
+            // }
+            // //get removed
+            // //this.isRemoved = true;
+            // getWorld().removeObject(this);
             
            
-        }
-    }
+        // }
+    // }
    
     
 }
