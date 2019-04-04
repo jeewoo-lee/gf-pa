@@ -91,13 +91,15 @@ public class EnemyTank extends Actor
         if (isTouching(Bullet.class))
         {
             life --;
-            if (life == 0)
+        }
+        if (life == 0)
             {
                 MyWorld world = (MyWorld) getWorld();
-                world.removeObject(this);
                 world.addScore();
+                world.removeObject(this);
+                
             }
-        }
+       
         
     }
     

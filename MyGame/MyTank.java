@@ -69,9 +69,9 @@ public class MyTank extends Actor
     {
         // if (reloadWaitTime > reloadTime)
         // {
-           if(Greenfoot.isKeyDown("space"))
+        if(Greenfoot.isKeyDown("space"))
            {
-            Bullet newBullet = new Bullet(45);
+           Bullet newBullet = new Bullet(getRotation());
            getWorld().addObject(newBullet, getX(), getY());
            }
            
@@ -80,11 +80,8 @@ public class MyTank extends Actor
  
     private void checkIfDamaged()
     {
-        if (isTouching(EnemyBullet.class))
-        {
-            life --;
-        }
-        if (life ==0)
+        
+        if (life == 0)
         {
             getWorld().showText("Game Over!",500,400);
             Greenfoot.stop();
