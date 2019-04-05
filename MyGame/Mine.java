@@ -20,19 +20,20 @@ public class Mine extends Actor
     }   
      private void checkIfTouchedBy()
      {
-        if (isTouching(EnemyTank.class))
+        if (isTouching(MyTank.class))
         {
             // Gets an object reference to the world
             MyWorld world = (MyWorld) getWorld();
             
-            
-            
-            
-            //get removed
-            //this.isRemoved = true;
             getWorld().removeObject(this);
             
            
+        }else if (isTouching(EnemyTank.class))
+        {
+            MyWorld world = (MyWorld) getWorld();
+            
+            getWorld().removeObject(this);
+            
         }
     }
  }

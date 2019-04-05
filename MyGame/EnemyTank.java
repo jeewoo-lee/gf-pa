@@ -38,6 +38,7 @@ public class EnemyTank extends Actor
 
     private void movement()
     {
+        
         int selection = Greenfoot.getRandomNumber(6);
 
         if (selection == 1) 
@@ -87,10 +88,7 @@ public class EnemyTank extends Actor
         {
             life --;
         }
-        if (isTouching(Mine.class))
-        {
-            life = life - 2;
-        }
+        
         
     }
 
@@ -101,6 +99,18 @@ public class EnemyTank extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.addScore();
             this.isRemoved = true;
+            Explosion newExplosion = new Explosion();
+            getWorld().addObject(newExplosion, getX(), getY());
+            getWorld().removeObject(this);
+
+        }
+        else if (isTouching(Mine.class))
+        {
+            MyWorld world = (MyWorld) getWorld();
+            world.addScore();
+            this.isRemoved = true;
+            Explosion newExplosion = new Explosion();
+            getWorld().addObject(newExplosion, getX(), getY());
             getWorld().removeObject(this);
 
         }

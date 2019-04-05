@@ -31,6 +31,7 @@ public class MyTank extends Actor
 
     private void movement()
     {
+        
         if (Greenfoot.isKeyDown("left")) 
         {
             setRotation(getRotation() - 3);
@@ -91,6 +92,10 @@ public class MyTank extends Actor
         if (isTouching(EnemyBullet.class))
         {
             life --;
+        }
+        if (isTouching(Mine.class))
+        {
+            life = life - 2;
         }
         
         if (life == 0)
