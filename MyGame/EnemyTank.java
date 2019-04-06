@@ -13,9 +13,7 @@ public class EnemyTank extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int reload = 0;
-    private int life = 3;
-    private int reloadTime = 7;
-    private int frames = 0;
+    private int life = 5;
     boolean isRemoved;
     public EnemyTank()
     {

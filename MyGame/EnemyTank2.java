@@ -13,7 +13,7 @@ public class EnemyTank2 extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int reload = 0;
-    private int life = 6;
+    private int life = 7;
     boolean isRemoved;
     public EnemyTank2()
     {
@@ -88,7 +88,7 @@ public class EnemyTank2 extends Actor
         }
         if (isTouching(Mine.class))
         {
-             life = life - 5;
+             life = life - 2;
             
         }
         
