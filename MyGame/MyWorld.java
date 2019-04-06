@@ -16,6 +16,7 @@
         private int frames = 0;
         private MyTank myTank;
         private EnemyTank enemy;
+        private Mine mine;
         public int score = 0;
         public MyWorld()
         {    
@@ -33,7 +34,6 @@
             dropEnemyTank();
             dropSupply();
             frames = frames +1;
-            showText("" + frames, 200, 200);
             checkIfEnd();
             
         }
@@ -59,6 +59,10 @@
         public MyTank getMyTank()
         {
             return myTank;
+        }
+        public Mine getMine()
+        {
+            return mine;
         }
     
         public EnemyTank getEnemyTank()
@@ -106,7 +110,8 @@
                 String a = Integer.toString(frames / 60);
                 showText("YOU WON",580,400);
                 showText("Your time is",580, 430);
-                showText(a, 610, 430);
+                showText(a, 680, 430);
+                Greenfoot.stop();
             }
         }
         int score()

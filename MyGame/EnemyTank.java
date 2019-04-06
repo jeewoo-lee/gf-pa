@@ -13,7 +13,7 @@ public class EnemyTank extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int reload = 0;
-    private int life = 5;
+    private int life = 6;
     private int reloadTime = 7;
     private int frames = 0;
     boolean isRemoved;
@@ -88,6 +88,11 @@ public class EnemyTank extends Actor
         {
             life --;
         }
+        if (isTouching(Mine.class))
+        {
+             life = life - 5;
+            
+        }
         
         
     }
@@ -104,16 +109,7 @@ public class EnemyTank extends Actor
             getWorld().removeObject(this);
 
         }
-        else if (isTouching(Mine.class))
-        {
-            MyWorld world = (MyWorld) getWorld();
-            world.addScore();
-            this.isRemoved = true;
-            Explosion newExplosion = new Explosion();
-            getWorld().addObject(newExplosion, getX(), getY());
-            getWorld().removeObject(this);
-
-        }
+        
     }
     private void fire()
     {

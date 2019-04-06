@@ -18,7 +18,7 @@ public class Mine extends Actor
     {
         checkIfTouchedBy();
     }   
-     private void checkIfTouchedBy()
+    public void checkIfTouchedBy()
      {
         if (isTouching(MyTank.class))
         {
@@ -28,7 +28,8 @@ public class Mine extends Actor
             getWorld().removeObject(this);
             
            
-        }else if (isTouching(EnemyTank.class))
+        } 
+        else if (isTouching(EnemyTank.class))
         {
             MyWorld world = (MyWorld) getWorld();
             
