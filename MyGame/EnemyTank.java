@@ -115,10 +115,13 @@ public class EnemyTank extends Actor
     {
        // if (frames % 30 == 0) 
         //{
-                if (reload == 30)
+                if (reload == 20)
                 {
                 EnemyBullet newEnemyBullet = new EnemyBullet(getRotation());
-                getWorld().addObject(newEnemyBullet, getX(), getY());
+                double x = Math.cos(getRotation()*Math.PI/180) * 34;
+                double y = Math.sin(getRotation()*Math.PI/180) * 34;
+                
+                getWorld().addObject(newEnemyBullet, getX()+(int)Math.round(x), getY()+(int)Math.round(y));
                 reload = 0;
                 }
         // }     

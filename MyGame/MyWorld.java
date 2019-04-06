@@ -99,7 +99,7 @@
         {
             score ++;
             String a = Integer.toString(score);
-            showText(a,180,20);
+            showText(a,200,20);
             showText("Score is",130, 20);
     
         }

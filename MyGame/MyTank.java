@@ -81,7 +81,10 @@ public class MyTank extends Actor
             if (reload > 1) 
             {
                 Bullet newBullet = new Bullet(getRotation());
-                getWorld().addObject(newBullet, getX(), getY());
+                double x = Math.cos(getRotation()*Math.PI/180) * 34;
+                double y = Math.sin(getRotation()*Math.PI/180) * 34;
+                
+                getWorld().addObject(newBullet, getX()+(int)Math.round(x), getY()+(int)Math.round(y));
                 reload = 0;
             }     
         }
@@ -97,7 +100,6 @@ public class MyTank extends Actor
         {
             life = life - 2;
         }
-        
         if (life == 0)
         {
             getWorld().showText("Game Over!",500,400);
