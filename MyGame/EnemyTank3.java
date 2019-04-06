@@ -13,7 +13,7 @@ public class EnemyTank3 extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int reload = 0;
-    private int life = 10;
+    private int life = 7;
     private int frames = 0;
     boolean isRemoved;
     public EnemyTank3()
@@ -98,7 +98,7 @@ public class EnemyTank3 extends Actor
 
     private void checkForRemoval()
     {
-        if (life == 0)
+        if (life < 1)
         {
             MyWorld world = (MyWorld) getWorld();
             world.addScore();
@@ -112,17 +112,16 @@ public class EnemyTank3 extends Actor
     }
     private void fire()
     {
-       // if (frames % 30 == 0) 
-        //{
-                if (reload == 20)
-                {
-                EnemyBullet newEnemyBullet = new EnemyBullet(getRotation());
-                double x = Math.cos(getRotation()*Math.PI/180) * 34;
-                double y = Math.sin(getRotation()*Math.PI/180) * 34;
-                
-                getWorld().addObject(newEnemyBullet, getX()+(int)Math.round(x), getY()+(int)Math.round(y));
-                reload = 0;
-                }
-        // }     
+       
+        if (reload == 15)
+        {
+            EnemyBullet newEnemyBullet = new EnemyBullet(getRotation());
+            double x = Math.cos(getRotation()*Math.PI/180) * 34;
+            double y = Math.sin(getRotation()*Math.PI/180) * 34;
+            
+            getWorld().addObject(newEnemyBullet, getX()+(int)Math.round(x), getY()+(int)Math.round(y));
+            reload = 0;
+        }
+           
     }
 }

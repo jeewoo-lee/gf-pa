@@ -13,8 +13,7 @@ public class EnemyTank2 extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int reload = 0;
-    private int life = 8;
-    private int frames = 0;
+    private int life = 6;
     boolean isRemoved;
     public EnemyTank2()
     {
@@ -98,7 +97,7 @@ public class EnemyTank2 extends Actor
 
     private void checkForRemoval()
     {
-        if (life == 0)
+        if (life < 1)
         {
             MyWorld world = (MyWorld) getWorld();
             world.addScore();
