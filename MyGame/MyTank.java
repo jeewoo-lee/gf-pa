@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -59,20 +60,11 @@ public class MyTank extends Actor
 
     } 
 
-    // public void changeReloadTime(int by)
-    // {
-        // this.reloadTime = this.reloadTime - by;
-    // }
-
+    
     public int returnLife()
     {
         return life;
     }
-
-    // public static int returnReloadTime()
-    // {
-        // return reloadTime;
-    // }
 
     private void fire()
     {
@@ -102,6 +94,8 @@ public class MyTank extends Actor
         }
         if (life == 0)
         {
+            Explosion newExplosion = new Explosion();
+            getWorld().addObject(newExplosion, getX(), getY());
             getWorld().showText("Game Over!",500,400);
             Greenfoot.stop();
         }

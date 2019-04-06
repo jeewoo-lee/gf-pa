@@ -18,12 +18,18 @@
         private EnemyTank enemy;
         private Mine mine;
         public int score = 0;
+        private int level = 1;
         public MyWorld()
         {    
             // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
             super(1200, 800, 1); 
             myTank = new MyTank();
             this.addObject(myTank,600,400);
+            //show level
+            String a = Integer.toString(level);
+            showText("Level:",300,20);
+            showText(a, 340, 20);
+           
             
         }
     
@@ -72,7 +78,7 @@
     
         private void dropSupply()
         {
-            if (frames % 120 == 0)
+            if (frames % 200 == 0)
             {
                 int selection = Greenfoot.getRandomNumber(10);
                 if (selection == 1)
@@ -88,10 +94,20 @@
     
         private void dropEnemyTank()
         {
-            
             if (frames % 120 == 0)
             {
-                addObject(new EnemyTank(), Greenfoot.getRandomNumber(1200), Greenfoot.getRandomNumber(800));
+                if (score < 15)
+                {
+                    addObject(new EnemyTank(), Greenfoot.getRandomNumber(1200), Greenfoot.getRandomNumber(800));
+                }
+                else if (31 > score| score > 14)
+                {
+                    addObject(new EnemyTank2(), Greenfoot.getRandomNumber(1200), Greenfoot.getRandomNumber(800));
+                }
+                else if (score > 31)
+                {
+                    addObject(new EnemyTank3(), Greenfoot.getRandomNumber(1200), Greenfoot.getRandomNumber(800));
+                }
             }
         }
     
@@ -124,6 +140,19 @@
             {
                Greenfoot.playSound("engine.wav");
             }
+        }
+        private void updateLevel()
+        {
+            if (score == 15)
+            {
+                level ++;
+            } 
+            else if (score == 30)
+            {
+                level ++;
+            }
+            
+            
         }
 
 }
