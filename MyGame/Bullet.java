@@ -51,6 +51,26 @@ public class Bullet extends Actor
             getWorld().removeObject(this);
 
         }
+        else if (isTouching(EnemyTank2.class))
+        {
+            // Gets an object reference to the world
+            MyWorld world = (MyWorld) getWorld();
+           
+            //get removed
+            this.isRemoved = true;
+            getWorld().removeObject(this);
+
+        }
+        else if (isTouching(EnemyTank3.class))
+        {
+            // Gets an object reference to the world
+            MyWorld world = (MyWorld) getWorld();
+           
+            //get removed
+            this.isRemoved = true;
+            getWorld().removeObject(this);
+
+        }
      
     }
     public void checkIfAtEdge()

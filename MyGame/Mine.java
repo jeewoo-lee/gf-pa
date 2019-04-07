@@ -29,7 +29,7 @@ public class Mine extends Actor
             
            
         } 
-        else if (isTouching(EnemyTank.class))
+        else if (isTouching(EnemyTank.class) |isTouching(EnemyTank2.class) | isTouching(EnemyTank3.class))
         {
             MyWorld world = (MyWorld) getWorld();
             

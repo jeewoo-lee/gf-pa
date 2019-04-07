@@ -14,7 +14,7 @@ public class MyTank extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int reload = 60;
-    private  int life = 20;
+    private  int life = 15;
     // private static int reloadTime = 5;
     // private static int reloadWaitTime = 0;
     
