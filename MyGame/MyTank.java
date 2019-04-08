@@ -15,8 +15,7 @@ public class MyTank extends Actor
      */
     int reload = 60;
     private  int life = 15;
-    // private static int reloadTime = 5;
-    // private static int reloadWaitTime = 0;
+    
     
     public void act() 
     {

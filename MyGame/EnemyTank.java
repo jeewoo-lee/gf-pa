@@ -69,12 +69,6 @@ public class EnemyTank extends Actor
 
     }
 
-    public void changeLifeLevel(int by)
-    {
-        this.life = this.life + by;
-
-    } 
-
     public int returnLife()
     {
         return life;

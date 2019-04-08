@@ -13,7 +13,7 @@ public class Bullet extends Actor
      * Act - do whatever the Bullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private static int reduceLife = -5;
+    
     boolean isRemoved = false;
     /**
      * Constructor for Bullet class
@@ -38,7 +38,7 @@ public class Bullet extends Actor
         }
     }  
 
-    public void checkIfTouchedBy()
+    private void checkIfTouchedBy()
     {
         
         if (isTouching(EnemyTank.class))
@@ -73,7 +73,7 @@ public class Bullet extends Actor
         }
      
     }
-    public void checkIfAtEdge()
+    private void checkIfAtEdge()
     {
         if (isAtEdge())
         {

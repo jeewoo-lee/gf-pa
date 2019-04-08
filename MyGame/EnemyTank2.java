@@ -69,12 +69,6 @@ public class EnemyTank2 extends Actor
 
     }
 
-    public void changeLifeLevel(int by)
-    {
-        this.life = this.life + by;
-
-    } 
-
     public int returnLife()
     {
         return life;
@@ -112,15 +106,15 @@ public class EnemyTank2 extends Actor
     private void fire()
     {
        
-                if (reload == 20)
-                {
-                EnemyBullet newEnemyBullet = new EnemyBullet(getRotation());
-                double x = Math.cos(getRotation()*Math.PI/180) * 34;
-                double y = Math.sin(getRotation()*Math.PI/180) * 34;
-                
-                getWorld().addObject(newEnemyBullet, getX()+(int)Math.round(x), getY()+(int)Math.round(y));
-                reload = 0;
-                }
+        if (reload == 20)
+        {
+            EnemyBullet newEnemyBullet = new EnemyBullet(getRotation());
+            double x = Math.cos(getRotation()*Math.PI/180) * 34;
+            double y = Math.sin(getRotation()*Math.PI/180) * 34;
+            
+            getWorld().addObject(newEnemyBullet, getX()+(int)Math.round(x), getY()+(int)Math.round(y));
+            reload = 0;
+        }
            
     }
 }

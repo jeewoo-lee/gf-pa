@@ -25,7 +25,7 @@ public class EnemyBullet extends Actor
     
     public void act() 
     {
-        // Add your action code here.
+        
         move(5);
         if (isRemoved == false)
         {
@@ -37,14 +37,12 @@ public class EnemyBullet extends Actor
         }
     }  
     
-    public void checkIfTouchedBy()
+    private void checkIfTouchedBy()
     {
         if (isTouching(MyTank.class))
         {
             // Gets an object reference to the world
             MyWorld world = (MyWorld) getWorld();
-            
-            
             
             //get removed
             this.isRemoved = true;
@@ -53,7 +51,7 @@ public class EnemyBullet extends Actor
            
         }
     }
-    public void checkIfAtEdge()
+    private void checkIfAtEdge()
     {
         if (isAtEdge())
         {

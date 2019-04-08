@@ -17,18 +17,10 @@ public class FixingKit extends Actor
     //private boolean isRemoved = false;
     public void act() 
     {
-      
        checkIfTouchedBy();
-       //checkIfTimeToDissapear();
-       /*if (isRemoved == false) 
-       {
-           
-           checkIfTimeToDissapear();
-       }
-       */
-        frames ++;
+       frames ++;
     }   
-    public void checkIfTouchedBy()
+    private void checkIfTouchedBy()
     {
         if (isTouching(MyTank.class))
         {
@@ -45,14 +37,5 @@ public class FixingKit extends Actor
            
         }
     }
-    private void checkIfTimeToDissapear()
-    {
-        if ((frames % 120 ) == 0)
-        {
-            // Get an object reference to our world
-            MyWorld world = (MyWorld) getWorld();
-            //hide
-            world.removeObject(this);
-        }
-    }
+    
 }
